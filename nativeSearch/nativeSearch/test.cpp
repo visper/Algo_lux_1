@@ -29,7 +29,7 @@ cout << " flag " << error;
 */
 //cout << "hello1\n";
 
-
+/*
 template <class TFunc, class TResult, class Tparam1>
 void test(TResult expect, TFunc f, TParam1 p1);
 
@@ -55,3 +55,4 @@ void testSearch()
 	test(8, NativeSearch, Array{ 0,1,2,3,4,4,5,6,7 });
 
 }
+*/
