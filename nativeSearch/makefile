@@ -1,5 +1,6 @@
 CC=g++
-FLAGS=-std=c++11 -O2 -Wall
+FLAGS=-std=c++11 -O2 -Wall -g
+#FLAGS= -g -o
 TGT=nativeSearch
 
 all:
@@ -8,5 +9,5 @@ all:
 	-o $(TGT)
 
 clean:
-	rm -rf $(TGT)
-	rm -rf *.o
+	rm -rf $(TGT)  2>/dev/null
+	rm -rf *.o     2>/dev/null

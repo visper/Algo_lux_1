@@ -1,8 +1,4 @@
 #include "nativeSearch.h"
-#include <iostream>
-#include <cassert>
-
-using namespace std;
 
 int NativeSearch(int* arr, size_t& length, int& key, bool& error)
 {

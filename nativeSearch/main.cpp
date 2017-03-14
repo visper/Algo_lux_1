@@ -1,8 +1,6 @@
-#include <iostream>
+#include "common.h"
 #include "test.h"
 #include "nativeSearch.h"
-
-//#define DEBUG 1
 
 using namespace std;
 
