@@ -1,5 +1,6 @@
 CC=g++
-FLAGS=-std=c++11 -O2 -Wall -g
+#FLAGS=-std=c++11 -O2 -Wall -g
+FLAGS=-std=c++11 -Wall -g
 #FLAGS= -g -o
 TGT=nativeSearch
 
