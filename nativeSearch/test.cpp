@@ -1,12 +1,6 @@
 #include "test.h"
 #include "nativeSearch.h"
 
-const size_t TESTED_ARRAY_LENGTH = 10;
-
-int testArray[TESTED_ARRAY_LENGTH] = {11,5,3,8,17,7,44,6,2,14};
-bool error = false;
-int key = 44;
-
 //int SimpleNativeSearch(int* arr, size_t& length, int& key, bool& error)
 //int VectorNativeSearch(std::vector<int>& arr, int& key, bool& error)
 //int search_3(std::vector<int>& v, int key)
@@ -24,6 +18,7 @@ ostream& operator<<(ostream& o, const vector<T>& v) {
     return o << "]";
 }
 
+/*
 //(*SimpleNativeSearch)(int*, size_t&, int, bool)
 template <class TFunc, class TResult, class TParam1, class TParam2,
 	  class TParam3, class TParam4>
@@ -56,3 +51,16 @@ void testSearch3(TResult expect, TFunc f, TParam1 p1, TParam2 p2) {
 
 testSimple<int, (*SimpleNativeSearch)(int*, size_t&, int, bool), int*, size_t&, int, bool>(10, SimpleNativeSearch, testArray, const_cast<size_t&>(TESTED_ARRAY_LENGTH), key, error);
 //int rc = SimpleNativeSearch(testArray, const_cast<size_t&>(TESTED_ARRAY_LENGTH), key, error);
+*/
+/*
+testSimple<int, (*SimpleNativeSearch)(int*, size_t&, int, bool), int*, size_t&, int, bool>(10, SimpleNativeSearch, testArray, const_cast<size_t&>(TESTED_ARRAY_LENGTH), key, error);
+//int rc = SimpleNativeSearch(testArray, const_cast<size_t&>(TESTED_ARRAY_LENGTH), key, error);
+*/
+
+void testSimple(int expected, int (*SimpleNativeSearch)(int*, size_t&, int&, bool&), int* array, size_t& len, int& key, bool& flag)
+{
+	auto got = SimpleNativeSearch(array, len, key, flag);
+	if(got != expected) {
+		cerr << "failed: " << expected << " != " << got << endl;
+	}
+}
