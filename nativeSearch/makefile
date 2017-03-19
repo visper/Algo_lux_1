@@ -6,7 +6,7 @@ TGT=nativeSearch
 
 all:
 	$(CC) $(FLAGS) \
-	nativeSearch.cpp  test.cpp  main.cpp \
+	binarySearch.cpp nativeSearch.cpp  test.cpp  main.cpp \
 	-o $(TGT)
 
 clean:

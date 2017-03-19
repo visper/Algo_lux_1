@@ -63,4 +63,20 @@ void testSimple(int expected, int (*SimpleNativeSearch)(int*, size_t&, int&, boo
 	if(got != expected) {
 		cerr << "failed: " << expected << " != " << got << endl;
 	}
+	else {
+		cout << "success" << endl;
+	}
 }
+
+/*
+void testSearch_3(int expected, int (*search_3)(vector<int> v, int&), vector<int> v, int& key)
+{
+	auto got = search_3(v, key);
+	if(got != expected) {
+		cerr << "failed: " << expected << " != " << got << endl;
+	}
+	else {
+		cout << "success" << endl;
+	}
+}
+*/
