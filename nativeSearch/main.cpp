@@ -37,11 +37,16 @@ int main(int argc, char** argv)
 	//	binary_search(const vector<int>& v, int key);
 	*/
 	typedef vector<int> Array;
-	Array v = Array({0,1,2,3,4,5,6,7,8,9});
+	Array v = Array({1,12,222,334,454,564,623,767,844,954});
 	//	size_t b = v.begin();
 	size_t e = v.size();
 
-	cout << binary_search_my(v, 0, e, 4);
+	//	cout << binary_search_my(v, 0, e, 4);
+
+	//	int rc = binary_search_my_imperative(v, 767);
+
+	int rc = trulyMyBinarySearch(v, 0, e, 767);
+	cout << rc << endl;
 
 	return 0;
 }
