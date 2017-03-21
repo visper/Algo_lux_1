@@ -128,10 +128,7 @@ int binary_search_my_imperative
 
 int trulyMyBinarySearch(const vector<int>& v, size_t begin, size_t end, int key)
 {
-	//0 = [b - m) + [m - e)
-
-  //	bool sorted = std::is_sorted(v.begin(), v.end());
-
+	//[b + e] = [b - m) + [m - e)
 	if(! std::is_sorted(v.begin(), v.end()))
 		return -1;
 

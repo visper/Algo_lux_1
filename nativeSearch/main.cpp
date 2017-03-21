@@ -45,8 +45,9 @@ int main(int argc, char** argv)
 
 	//	int rc = binary_search_my_imperative(v, 767);
 
-	int rc = trulyMyBinarySearch(v, 0, e, 767);
-	cout << rc << endl;
+	//	int rc = trulyMyBinarySearch(v, 0, e, 767);
+	//	cout << rc << endl;
+	test_search();
 
 	return 0;
 }
