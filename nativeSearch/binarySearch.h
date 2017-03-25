@@ -14,3 +14,5 @@ int trulyMyBinarySearch(const vector<int>& v, size_t begin, size_t end,
 			int key);
 
 int trulyMyBinarySearchIterative(const vector<int>& v, int key);
+
+int* lower_bound(int* b, int* e, int key);

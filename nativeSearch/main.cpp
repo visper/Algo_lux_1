@@ -8,8 +8,7 @@ using namespace std;
 int main(int argc, char** argv)
 {
   /*
-	cout << "hello\n";
-	//	system("pause");
+  //	cout << "hello\n";
 
 	const size_t TESTED_ARRAY_LENGTH = 10;
 
@@ -29,7 +28,7 @@ int main(int argc, char** argv)
 	bool error = false;
 	int key = 44;
 	
-	testSimple(6, SimpleNativeSearch, testArray, 
+      	testSimple(6, SimpleNativeSearch, testArray, 
 		   const_cast<size_t&>(TESTED_ARRAY_LENGTH), key, error );
 
 	//	testSearch_3(6, search_3, inputArr, key);
@@ -37,9 +36,12 @@ int main(int argc, char** argv)
 	//	binary_search(const vector<int>& v, int key);
 	*/
 	typedef vector<int> Array;
-	Array v = Array({1,12,222,334,454,564,623,767,844,954});
+	//	Array v = Array({1,12,222,334,454,564,623,767,844,954});
+
+	const size_t TESTED_ARRAY_LENGTH = 10;
+	int testArray[TESTED_ARRAY_LENGTH] = {1,12,222,334,454,564,623,767,844,954};
 	//	size_t b = v.begin();
-	size_t e = v.size();
+	//	size_t e = v.size();
 
 	//	cout << binary_search_my(v, 0, e, 4);
 
@@ -47,7 +49,11 @@ int main(int argc, char** argv)
 
 	//	int rc = trulyMyBinarySearch(v, 0, e, 767);
 	//	cout << rc << endl;
-	test_search();
+	//	test_search();
+
+	//	int* rc = lower_bound(testArray, testArray+9, 623);
+	int* rc = lower_bound(testArray, testArray+9, 767);
+	cout << *rc << endl;
 
 	return 0;
 }

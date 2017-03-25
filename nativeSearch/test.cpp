@@ -39,7 +39,18 @@ void test(TResult expect, TFunc f, TParam1 p1, TParam2 p2,
 		     << got << " != " << expect << endl;
 	}
 }
-
+/*
+template <class TFunc, class TResult, class TParam1, class TParam2,
+	  class TParam3 >
+void test(TFunc f, TParam1 p1, TParam2 p2,
+	  TParam3 p3) {
+	auto got = f(p1, p2, p3);
+	if(got != expect) {
+		cerr << "failed: f(" << p1 << ", " << p2 << ", " 
+		     << p3 <<  ") = " << got << " != " << expect << endl;
+	}
+}
+*/
 //int SimpleNativeSearch(int* arr, size_t& length, int& key, bool& error)
 //int VectorNativeSearch(std::vector<int>& arr, int& key, bool& error)
 //int search_3(std::vector<int>& v, int key)
@@ -160,3 +171,44 @@ void test_search() {
         test(2, search, Array({2,1,key,7,key}),
 	     0, (Array({2,1,key,7,key})).size(), key); // general       
 }
+/*
+void test_search_lower_bound () {
+
+	typedef vector<int> Array;
+
+	//    auto search = search_2;
+	auto search = lower_bound;
+
+	auto key = 8;
+	// key not exists in array
+        test(-1, search, Array(), 0, (Array()).size(), key); // degerate
+        test(-1, search, Array({key-1}),
+	     0, (Array({key-1})).size(), key); // trivial
+        test(-1, search, Array({key-1, key+1}),
+	     0, (Array({key-1, key+1})).size(), key); // trivial2
+        test(-1, search, Array({1,2,3,4,5,7}), 
+	     0, (Array({1,2,3,4,5,7})).size(), key); // general
+        test(-1, search, Array({9,10,11,12}), 
+	     0, (Array({9,10,11,12})).size(), key); // general
+        test(-1, search, Array({4,1,2,7,10}), 
+	     0, (Array({4,1,2,7,10})).size(), key); // general
+	// key exists in array
+        // non appliable // degerate
+        test(0, search, Array({key}), 0, (Array({key})).size(), key); // trivial
+        test(0, search, Array({key, key+1}), 
+	     0, (Array({key, key+1})).size(), key); // trivial2
+        test(1, search, Array({key-1, key}), 
+	     0, (Array({key-1, key})).size(), key); // trivial2
+        test(8, search, Array({0,1,2,3,4,5,6,7,key}), 
+	     0, (Array({0,1,2,3,4,5,6,7,key})).size(), key); // general
+        test(0, search, Array({key, 9,10,11,12}),
+	     0, (Array({key, 9,10,11,12})).size(), key); // general
+        test(2, search, Array({4,1,key,7,10}),
+	     0, (Array({4,1,key,7,10})).size(), key); // general                
+        
+        test(0, search, Array({key,1,key,7,10}),
+	     0, (Array({key,1,key,7,10})).size(), key); // general        
+        test(2, search, Array({2,1,key,7,key}),
+	     0, (Array({2,1,key,7,key})).size(), key); // general       
+}
+*/

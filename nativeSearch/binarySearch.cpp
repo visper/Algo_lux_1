@@ -154,3 +154,32 @@ int trulyMyBinarySearchIterative(const vector<int>& v, int key)
 {
 	return -1;
 }
+
+//template <class Iter, class Key>
+int* lower_bound(int* b, int* e, int key)
+{
+//	assert(! std::is_sorted(v.begin(), v.end()));
+
+	//[b, e) = [b, m) U [m, e)	
+	while(b < e) {
+		int* m = b + (e - b)/2;
+/*
+		if(key < *m) { //--x--|-----
+			e = m;
+		}
+		else {         //-----|--x--
+			b = m+1;
+		}
+*/
+		if(*m < key) {
+			b = m+1;
+		}
+		else {
+			e = m;
+		}
+	}
+
+	return b;
+}
+
+//need lower bound
