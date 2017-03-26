@@ -1,5 +1,7 @@
 #include "nativeSearch.h"
 
+#include <cassert>
+
 int SimpleNativeSearch(int* arr, size_t& length, int& key, bool& error)
 {
 #if DEBUG
@@ -77,17 +79,62 @@ int VectorNativeSearch(std::vector<int>& arr, int& key, bool& error)
 	return -1;
 }
 
+int search_0(int v[], size_t size, int key) {
+	for (int i = 0; i < size; ++i) {
+		if (v[i] == key) {
+			return i;
+		}
+	}
+
+	return -1;
+}
+
+int search_1(int v[], size_t size, int key) {
+	v[size] = key;
+
+	int i = 0;
+	while (v[i] != key) {   ++i; }
+
+	if (i != size) { 
+		return i;
+	}
+
+	return -1;
+}
+
+int search_2(const std::vector<int>& v, int key) {
+	for (int i = 0; i < v.size(); ++i) {
+		if (v[i] == key) {
+			return i;
+		}
+	}
+
+	return -1;
+}
+
 int search_3(std::vector<int>& v, int key) {
-    v.push_back(key);
-    int i = 0;
-    while (v[i] != key) {
-        ++i;
-    }
-    v.pop_back();
+	v.push_back(key);
+	int i = 0;
+	while (v[i] != key) {
+		++i;
+	}
+	v.pop_back();
 
-    if (i != static_cast<int>(v.size()) ) {
-        return i;
-    }
+	if (i != static_cast<int>(v.size()) ) {
+		return i;
+	}
 
-    return -1;
+	return -1;
+}
+
+int* goodSearch(int* begin, int* end, int key)
+{
+	assert(begin != NULL && end != NULL);
+	while(begin < end) {
+		if(*begin == key) {
+			break;
+		}
+		++begin;	       
+	}
+	return begin;
 }
